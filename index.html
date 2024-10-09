@@ -36,7 +36,20 @@
             border-bottom: 2px solid #07943f;
             padding-bottom: 10px;
         }
+/* New CSS Start */
+        .invoice-header img {
+            display: block; /* Ensure the image is treated as a block element */
+            margin: 0 auto; /* Center the image */
+        }
 
+        .tagline {
+            color: #07943f; /* Set the text color */
+            text-align: center; /* Center the text */
+            font-size: 14px; /* Set the font size */
+            margin-top: 5px; /* Add some space above the text */
+            display: block; /* Ensure the text is treated as a block element */
+        }
+/* New CSS End */
         .invoice-header h1 {
             color: #07943f;
             margin: 0;
@@ -194,9 +207,11 @@
                 <p>Hamza's Thekathil Kada Junction,<br>Kaniyapuram P.O,<br>Thiruvananthapuram, 695301
                 <br>Phone: +91 9809289089 | Email: greenfortmaterials@gmail.com</p>
             </div>
-            <img src="./images/logo.png" alt="Company Logo"><br>
-            <p><i>Building a Greener, Stronger Tomorrow</i></p>
-        
+           <!-- <img src="./images/logo.png" alt="Company Logo">--> <!--Old Logo-->
+            <div style="text-align: center;">
+    <img src="./images/logo.png" alt="Company Logo">
+    <p class="tagline">Building a Greener, Stronger Tomorrow</p>
+</div> <!-- End of New Edit -->
         </div>
 
         <div class="invoice-copy-type">
