@@ -204,7 +204,7 @@
 </head>
 <body>
     <div class="invoice">
-        <div class="tax-invoice-title" id="print-title" style="display: none;">Proforma Invoice</div>
+        <div class="tax-invoice-title" id="print-title" style="display: none;">Tax Invoice</div>
         <p id="selected-copy-type" style="display: none;"></p>
         <div class="invoice-header">
             <div>
@@ -226,6 +226,7 @@
                 <option value="Original for Transporter">Duplicate for Transporter</option>
                 <option value="Duplicate for Supplier">Triplicate for Supplier</option>
                 <option value="Estimate">Estimate</option>
+                <option value="Proforma">Proforma Invoice</option>
             </select>
         </div>
 
@@ -431,6 +432,7 @@
             const printTitle = document.getElementById('print-title');
             printTitle.style.display = copyType === "Estimate" ? "block" : "block";
             printTitle.textContent = copyType === "Estimate" ? "Estimate" : "Tax Invoice";
+            printTitle.textContent = copyType === "Proforma" ? "Proforma" : "Proforma Invoice";
         }
 
         window.addEventListener('beforeprint', function() {
