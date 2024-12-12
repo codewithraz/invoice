@@ -432,7 +432,7 @@
             const printTitle = document.getElementById('print-title');
             printTitle.style.display = copyType === "Estimate" ? "block" : "block";
             printTitle.textContent = copyType === "Estimate" ? "Estimate" : "Tax Invoice";
-            printTitle.textContent = copyType === "Proforma" ? "Proforma" : "Proforma Invoice";
+            printTitle.textContent = copyType === "Proforma" ? "Proforma Invoice" : "Proforma Invoice";
         }
 
         window.addEventListener('beforeprint', function() {
