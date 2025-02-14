@@ -403,7 +403,8 @@
                 const sgstAmount = (lineSubtotal * sgstRate) / 100;
 
                 // Calculate the total for the row (line subtotal + CGST + SGST)
-                const rowTotal = lineSubtotal + cgstAmount + sgstAmount +transportAmount;
+                //const rowTotal = lineSubtotal + cgstAmount + sgstAmount +transportAmount;
+                const rowTotal = lineSubtotal + cgstAmount + sgstAmount;
 
                 // Update the row's total in the table
                 row.querySelector('.total').textContent = rowTotal.toFixed(2);
@@ -418,8 +419,9 @@
             subtotalCell.textContent = subtotal.toFixed(2);
             cgstTotalCell.textContent = cgstTotal.toFixed(2);
             sgstTotalCell.textContent = sgstTotal.toFixed(2);
-            totalCell.textContent = (subtotal + cgstTotal + sgstTotal + transportAmount).toFixed(2);
-        }
+            const grandTotal = subtotal + cgstTotal + sgstTotal + transportAmount;
+            totalCell.textContent = grandTotal.toFixed(2);       
+         }
 
         function clearForm() {
             invoiceTable.innerHTML = '';
