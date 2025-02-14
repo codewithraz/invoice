@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -209,7 +210,7 @@
             <div>
                 <h1>GreenFort Materials</h1>
                 <p style="font-size: 14px;">Hamza's Thekathil Kada Junction,<br>Kaniyapuram P.O,<br>Thiruvananthapuram, 695301
-                <br>GSTIN: 32BHKPR9859Q1Z4 <br>Phone: +91 9809289089 | Email: greenfortmaterials@gmail.com</p>
+                <br>GSTIN: 32BHKPR9859Q1Z4 <br>Phone: +91 9809289089 | Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="22455047474c444d50564f435647504b434e5162454f434b4e0c414d4f">[email&#160;protected]</a></p>
             </div>
            <!-- <img src="./images/logo.png" alt="Company Logo">--> <!--Old Logo-->
             <div style="text-align: center;">
@@ -297,6 +298,10 @@
                         <td id="sgst-total">0.00</td>
                     </tr>
                     <tr>
+                        <td colspan="6"><strong>Transportation Charge:</strong></td>
+                        <td><input type="number" id="transport-amount" name="transport-amount" value="0" oninput="calculateTotal()"></td>
+                    </tr>
+                    <tr>
                         <td colspan="6"><strong>Total:</strong></td>
                         <td id="total">0.00</td>
                     </tr>
@@ -340,7 +345,7 @@
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let counter = 1; // Counter to keep track of serial number
 
         const invoiceTable = document.getElementById('invoice-table').querySelector('tbody');
@@ -375,6 +380,9 @@
             let cgstTotal = 0;
             let sgstTotal = 0;
 
+            // New Function for Transport
+            const transportAmount = parseFloat(document.getElementById("transport-amount").value) || 0;
+
             invoiceTable.querySelectorAll('tr').forEach(row => {
                 const quantity = parseInt(row.querySelector('[name="quantity"]').value) || 0;
                 const sellingPrice = parseFloat(row.querySelector('[name="price"]').value) || 0;
@@ -395,7 +403,7 @@
                 const sgstAmount = (lineSubtotal * sgstRate) / 100;
 
                 // Calculate the total for the row (line subtotal + CGST + SGST)
-                const rowTotal = lineSubtotal + cgstAmount + sgstAmount;
+                const rowTotal = lineSubtotal + cgstAmount + sgstAmount +transportAmount;
 
                 // Update the row's total in the table
                 row.querySelector('.total').textContent = rowTotal.toFixed(2);
@@ -410,7 +418,7 @@
             subtotalCell.textContent = subtotal.toFixed(2);
             cgstTotalCell.textContent = cgstTotal.toFixed(2);
             sgstTotalCell.textContent = sgstTotal.toFixed(2);
-            totalCell.textContent = (subtotal + cgstTotal + sgstTotal).toFixed(2);
+            totalCell.textContent = (subtotal + cgstTotal + sgstTotal + transportAmount).toFixed(2);
         }
 
         function clearForm() {
