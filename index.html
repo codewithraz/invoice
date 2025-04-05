@@ -198,7 +198,7 @@
 
         .remarks {
             width: 100%;
-            font-size: 14px;
+            font-size: 9.8px;
         }
     </style>
 </head>
@@ -242,11 +242,11 @@
             <div>
                 <label for="customer-name">Customer Name:</label>
                 <!-- <input type="text" id="customer-name" name="customer-name"> -->
-                <textarea id="customer-name" name="customer-name" rows="8" style="height: 90px;"></textarea>
+                <textarea id="customer-name" name="customer-name" rows="8" style="height: 90px; font-size: 9.8px;"></textarea>
             </div>
             <div>
                 <label for="customer-address">Customer Address:</label>
-                <textarea id="customer-address" name="customer-address" rows="8" style="height: 90px;"></textarea>
+                <textarea id="customer-address" name="customer-address" rows="8" style="height: 90px; font-size: 9.8px;"></textarea>
             </div>
             <div>
                 <label for="payment-mode">Payment Mode:</label>
@@ -315,7 +315,7 @@
                 <label for="remarks">Remarks:</label>
                 <input type="text" id="remarks" name="remarks" class="remarks" placeholder="Enter remarks here...">
             </div>
-            <div class="payment-details">
+            <!--<div class="payment-details">
                 <h4>Payment Details:</h4>
                 <b>UPI Number:</b> 9809289089<br>
                 <b>Account Holder Name:</b> Greenfort Materials<br>
@@ -324,7 +324,24 @@
                 <b>IFSC Code:</b> SBIN0070045<br>
                 <b>Branch:</b> Pallithura
             </div>
-        </div>
+        </div> -->
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-top: 20px;">
+                <!-- Payment Details on the left -->
+                <div class="payment-details" style="flex: 1; padding-right: 20px;">
+                  <h4>Payment Details:</h4>
+                  <b>UPI Number:</b> 9809289089<br>
+                  <b>Account Holder Name:</b> Greenfort Materials<br>
+                  <b>Bank Name:</b> State Bank of India<br>
+                  <b>Account Number:</b> 43335895627<br>
+                  <b>IFSC Code:</b> SBIN0070045<br>
+                  <b>Branch:</b> Pallithura
+                </div>
+              
+                <!-- Image on the right -->
+                <div style="flex-shrink: 0;">
+                  <img src="./images/scanandpay.png" alt="Payment QR" style="max-width: 150px; height: auto;">
+                </div>
+              </div>
 
         <div class="signature-area">
             <div>
